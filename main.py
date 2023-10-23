@@ -10,8 +10,24 @@ def encode(str_num):
     return encoded
 
 def main():
-    pw = input("Enter a password to be encoded: ")
-    print(encode(pw))
+    while True:
+        choice = menu()
+
+        if choice == "1":
+            pw = input("Please enter your password to encode: ")
+            pw = encode(pw)
+            print("Your password has been encoded and stored!")
+        #elif choice == "2":
+            #orig_pw = decode(pw)
+            #print(f'The encoded password is {pw}, and the original password is {orig_pw}.')
+        elif choice == "3":
+            quit()
+
+def menu():
+    print("Menu\n-------------")
+    print("1. Encode\n2. Decode\n3. Quit")
+    choice = input("Please enter an option: ")
+    return choice
 
 if __name__ == "__main__":
     main()
