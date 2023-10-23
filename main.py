@@ -9,6 +9,15 @@ def encode(str_num):
             encoded += str(int(i) - 7)
     return encoded
 
+
+def decode(encoded_password):
+    decoded_password = ""
+    for num in encoded_password:
+        old_num = (int(num) - 3) % 10
+        decoded_password += str(old_num)
+    return decoded_password
+
+
 def main():
     while True:
         choice = menu()
@@ -17,9 +26,9 @@ def main():
             pw = input("Please enter your password to encode: ")
             pw = encode(pw)
             print("Your password has been encoded and stored!")
-        #elif choice == "2":
-            #orig_pw = decode(pw)
-            #print(f'The encoded password is {pw}, and the original password is {orig_pw}.')
+        elif choice == "2":
+            orig_pw = decode(pw)
+            print(f'The encoded password is {pw}, and the original password is {orig_pw}.')
         elif choice == "3":
             quit()
 
