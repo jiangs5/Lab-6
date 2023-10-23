@@ -1,10 +1,8 @@
 # Susan Jiang
 
 def encode(str_num):
-    temp_list = []
-    temp_list[:] = str_num
     encoded = ""
-    for i in temp_list:
+    for i in str_num:
         if int(i) < 7:
             encoded += str(int(i) + 3)
         else:
@@ -12,7 +10,8 @@ def encode(str_num):
     return encoded
 
 def main():
-    print(encode("00009962"))
+    pw = input("Enter a password to be encoded: ")
+    print(encode(pw))
 
 if __name__ == "__main__":
     main()
